@@ -27,6 +27,7 @@ let nextJokeId = 10000000;
 //Configure the application (the API server)
 app.get("/jokes", handleRequestForAllJokes);
 function handleRequestForAllJokes(req, res) {
+  Math.randomChicken();
   //res.header('Access-Control-Allow-Origin', '*');
   res.json(allJokes);
 }
