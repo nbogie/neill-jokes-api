@@ -5,7 +5,15 @@ const allJokes = require("./jokesData.json");
 const lodash = require("lodash");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT;
+/* 
+if running in production
+   port = PORT environment variable
+else
+   port = 4000
+*/
+
+const port = process.env.NODE_ENV === "production" ? process.env.PORT : 4000;
+
 // be prepared to parse application/json if seen in body and substitute req.body as the parsed object
 app.use(express.json());
 app.use(cors());
